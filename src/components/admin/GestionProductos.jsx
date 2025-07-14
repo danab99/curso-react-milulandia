@@ -1,36 +1,36 @@
 import { useEffect, useState, useCallback } from "react";
-import { useProductosContext } from "../../contexts/ProductosContext";
+import { obtenerProductos, eliminarProducto } from "../../utils/requests";
 import { FaEye, FaEdit, FaTrash, FaSearch } from "react-icons/fa";
-import { mostrarDetalleProducto } from "../../utils/SweetDetalleProducto"
+import {  mostrarDetalleProducto } from "../../utils/SweetDetalleProducto"
 import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
 import "../../styles/Admin/GestionProductos.css";
 
 export default function GestionProductos() {
   const navigate = useNavigate();
-  const { productos, obtenerProductos } = useProductosContext();
-  //const [productos, setProductos] = useState([]);
+  const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
 
-  useEffect(() => {
-    const cargarProductos = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        await obtenerProductos();
-        setLoading(false);
-      } catch (error) {
-        console.error('Error al cargar productos:', error);
-        setError('Hubo un problema al cargar los productos. Por favor, intenta de nuevo.');
-        setLoading(false);
-      }
-    };
-
-    cargarProductos();
+  const cargarProductos = useCallback(async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const res = await obtenerProductos();
+      setProductos(res);
+    } catch (err) {
+      console.error("Error cargando productos:", err);
+      setError("Error al cargar los productos. Por favor, intenta de nuevo.");
+    } finally {
+      setLoading(false);
+    }
   }, []);
+
+  useEffect(() => {
+    cargarProductos();
+  }, [cargarProductos]);
 
   const formatearPrecio = (precio) =>
     new Intl.NumberFormat("es-AR", {
