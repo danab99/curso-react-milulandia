@@ -182,7 +182,7 @@ function LoginBoost2() {
         </form>
 
         {/* Botón de Google solo para login */}
-        {isLoginMode && (
+        {/* {isLoginMode && (
           <button
             onClick={handleGoogleLogin}
             className="btn btn-outline-danger w-100 mb-3"
@@ -190,7 +190,7 @@ function LoginBoost2() {
           >
             {isLoading ? 'Conectando...' : '🔍 Continuar con Google'}
           </button>
-        )}
+        )} */}
 
         {/* Botón para alternar entre login y registro */}
         <div className="text-center">
