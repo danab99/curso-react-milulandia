@@ -58,7 +58,7 @@ Desarrollado como **Entrega Final** del curso ReactJS de Tech Talent, cumple con
 - **React Router DOM**
 - **Context API** (Auth & Carrito)
 - **MockAPI** (API simulada)
-- **Firebase** (opcional)
+- **Firebase** (autenticación)
 - **Bootstrap**
 - **SweetAlert2**
 
