@@ -1,0 +1,88 @@
+/* AgregarProducto Styles */
+.agregar-producto-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-red) 50%, var(--accent-color) 100%);
+  min-height: 100vh;
+}
+
+.agregar-producto-header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.agregar-producto-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.agregar-producto-subtitle {
+  font-size: 1.3rem;
+  color: var(--white);
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.agregar-producto-card {
+  background: #f5f5f5;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-hover);
+  padding: 3rem;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.agregar-producto-card label {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.agregar-producto-card .form-control {
+  border-radius: var(--border-radius);
+}
+
+.agregar-producto-btn {
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.agregar-producto-btn:hover {
+  background: var(--dark-red);
+}
+
+/* Ícono decorativo (opcional) */
+.agregar-producto-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+}
+
+.agregar-producto-icon i {
+  font-size: 2rem;
+  color: var(--white);
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .agregar-producto-card {
+    padding: 2rem;
+  }
+
+  .agregar-producto-title {
+    font-size: 2.2rem;
+  }
+}

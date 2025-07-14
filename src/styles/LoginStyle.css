@@ -1,0 +1,78 @@
+/* Container general del login */
+.login-container {
+  background: linear-gradient(135deg, var(--primary-color), var(--dark-red));
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* Card principal */
+.login-card {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.login-card h3 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.login-card .form-label {
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.login-card .form-control {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--primary-color);
+  transition: box-shadow 0.3s ease;
+}
+
+.login-card .form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.2);
+  border-color: var(--accent-color);
+}
+
+.login-card .btn-primary {
+  background: var(--primary-color);
+  border: none;
+  border-radius: var(--border-radius);
+  transition: background 0.3s ease;
+}
+
+.login-card .btn-primary:hover {
+  background: var(--dark-red);
+}
+
+.login-card .btn-outline-danger {
+  border-radius: var(--border-radius);
+}
+
+.login-card .btn-link {
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-card .btn-link:hover {
+  text-decoration: underline;
+}
+
+.login-card .testing-info {
+  background: #f9f9f9;
+  border-radius: var(--border-radius);
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.login-card small.text-muted {
+  color: #666;
+}

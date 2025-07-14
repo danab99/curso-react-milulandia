@@ -1,0 +1,28 @@
+.dashboard-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard-card {
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  border: none;
+  border-radius: 12px;
+  background-color: #ffffff;
+}
+
+.dashboard-title {
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: 600;
+  text-align: center;
+}
+
+.dashboard-text {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+}
