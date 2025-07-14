@@ -17,7 +17,7 @@ function EditarProducto() {
     name: "",
     price: "",
     description: "",
-    imagen: "",
+    image: "", 
   });
 
   useEffect(() => {
@@ -53,7 +53,7 @@ function EditarProducto() {
       case "description":
         if (!value.trim() || value.length < 10) error = "Debe tener al menos 10 caracteres.";
         break;
-      case "imagen":
+      case "image": 
         if (!value.trim()) error = "La URL no debe estar vacía.";
         break;
       default:
@@ -82,7 +82,7 @@ function EditarProducto() {
       name: validarCampo("name", producto.name),
       price: validarCampo("price", producto.price),
       description: validarCampo("description", producto.description),
-      imagen: validarCampo("imagen", producto.imagen),
+      image: validarCampo("image", producto.image), 
     };
 
     setErrors(newErrors);
@@ -140,17 +140,17 @@ function EditarProducto() {
             <Form.Control.Feedback type="invalid">{errors.name}</Form.Control.Feedback>
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="imagen">
+          <Form.Group className="mb-3" controlId="image">
             <Form.Label>URL de la Imagen</Form.Label>
             <Form.Control
               type="text"
               placeholder="Ingrese URL de la imagen"
-              name="imagen"
-              value={producto.imagen}
+              name="image" 
+              value={producto.image}
               onChange={handleChange}
-              isInvalid={!!errors.imagen}
+              isInvalid={!!errors.image}
             />
-            <Form.Control.Feedback type="invalid">{errors.imagen}</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">{errors.image}</Form.Control.Feedback>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="precio">
@@ -197,4 +197,3 @@ function EditarProducto() {
 }
 
 export default EditarProducto;
-
