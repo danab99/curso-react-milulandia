@@ -1,11 +1,10 @@
-import "../../styles/Admin/AgregarProducto.css"
+import "../../styles/Admin/AgregarProducto.css";
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { dispararSweetBasico } from '../../utils/SweetAlert';
 import { agregarProducto } from '../../utils/requests';
 import { useAuthContext } from '../../contexts/AuthContext';
 import { Navigate } from 'react-router-dom';
-
 
 function AgregarProducto() {
   const { admin } = useAuthContext();
@@ -14,14 +13,14 @@ function AgregarProducto() {
     name: '',
     price: '',
     description: '',
-    imagen: ''
+    image: ''
   });
 
   const [errors, setErrors] = useState({
     name: '',
     price: '',
     description: '',
-    imagen: ''
+    image: ''
   });
 
   const validarCampo = (name, value) => {
@@ -36,7 +35,7 @@ function AgregarProducto() {
       case 'description':
         if (!value.trim() || value.length < 10) error = 'Debe tener al menos 10 caracteres.';
         break;
-      case 'imagen':
+      case 'image':
         if (!value.trim()) error = 'La URL no debe estar vacía.';
         break;
       default:
@@ -52,7 +51,6 @@ function AgregarProducto() {
       [name]: name === "price" ? Number(value) : value
     }));
 
-    // Validar en tiempo real
     setErrors(prev => ({
       ...prev,
       [name]: validarCampo(name, value)
@@ -66,7 +64,7 @@ function AgregarProducto() {
       name: validarCampo('name', producto.name),
       price: validarCampo('price', producto.price),
       description: validarCampo('description', producto.description),
-      imagen: validarCampo('imagen', producto.imagen)
+      image: validarCampo('image', producto.image)
     };
 
     setErrors(newErrors);
@@ -81,7 +79,7 @@ function AgregarProducto() {
     try {
       await agregarProducto(producto);
       dispararSweetBasico("Producto agregado", "Se agregó correctamente.", "success", "Cerrar");
-      setProducto({ name: '', price: '', description: '', imagen: '' });
+      setProducto({ name: '', price: '', description: '', image: '' });
       setErrors({});
     } catch (error) {
       dispararSweetBasico("Error", error.message || error, "error", "Cerrar");
@@ -118,18 +116,18 @@ function AgregarProducto() {
             </Form.Control.Feedback>
           </Form.Group>
 
-          <Form.Group className="mb-3" controlId="imagen">
+          <Form.Group className="mb-3" controlId="image">
             <Form.Label>URL de la Imagen</Form.Label>
             <Form.Control
               type="text"
               placeholder="Ingrese URL de la imagen"
-              name="imagen"
-              value={producto.imagen}
+              name="image" 
+              value={producto.image} 
               onChange={handleChange}
-              isInvalid={!!errors.imagen}
+              isInvalid={!!errors.image} 
             />
             <Form.Control.Feedback type="invalid">
-              {errors.imagen}
+              {errors.image}
             </Form.Control.Feedback>
           </Form.Group>
 
