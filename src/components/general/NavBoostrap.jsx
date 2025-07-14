@@ -64,18 +64,9 @@ function NavBoostrap() {
             
             {/* Menú Admin - Solo para administradores */}
             <AdminContent>
-              <Dropdown className="nav-dropdown">
-                <Dropdown.Toggle as={Nav.Link} className="nav-item admin-link">
-                  Admin
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item as={Link} to="/admin">Dashboard</Dropdown.Item>
-                  <Dropdown.Item as={Link} to="/admin/productos">Gestionar Productos</Dropdown.Item>
-                  <Dropdown.Item as={Link} to="/admin/agregar-productos">Agregar Productos</Dropdown.Item>
-                  <Dropdown.Item as={Link} to="/admin/pedidos">Gestionar Pedidos</Dropdown.Item>
-                  <Dropdown.Item as={Link} to="/admin/usuarios">Usuarios</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
+              <Nav.Link as={Link} to="/admin" className="nav-item">
+                Admin
+              </Nav.Link>
             </AdminContent>
           </Nav>
 
@@ -109,10 +100,7 @@ function NavBoostrap() {
                   )}
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
-                  <Dropdown.Item as={Link} to="/perfil">Mi Perfil</Dropdown.Item>
-                  <Dropdown.Item as={Link} to="/pedidos">Mis Pedidos</Dropdown.Item>
                   <Dropdown.Item as={Link} to="/carrito">Mi Carrito</Dropdown.Item>
-                  <Dropdown.Item as={Link} to="/configuracion">Configuración</Dropdown.Item>
                   <Dropdown.Divider />
                   <Dropdown.Item onClick={handleLogout}>Cerrar Sesión</Dropdown.Item>
                 </Dropdown.Menu>
